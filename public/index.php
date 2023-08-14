@@ -12,7 +12,7 @@ define('VIEWS_PATH', $root . 'views' . DIRECTORY_SEPARATOR);
 
 // include necessary file 
 require APP_PATH . "App.php";
-require VIEWS_PATH . "transactions.php";
+
 
 if (!file_exists(FILES_PATH . "sample_1.csv"))
 {
@@ -28,3 +28,13 @@ else
 // read csv file
 storeCSVFile($file_path); // all ada stored in $content array of array
 
+// calculate the income, expense and net total
+calculateMoney();
+
+// Format the money
+$total_income = formattingMoney(strval($total_income));
+$total_expense = formattingMoney(strval($total_expense));
+$net_total = formattingMoney(strval($net_total));
+
+// PROCESS THE TRANSACTION FILE
+require VIEWS_PATH . "transactions.php";
