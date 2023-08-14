@@ -69,14 +69,14 @@ function calculateMoney() {
 
 }
 
-function formattingMoney(string $money_arguments): string
+function formattingMoney(float $money_arguments): string
 {  
     if ($money_arguments >= 0)
     {
-        return ("$" . $money_arguments);
+        return ("$" . number_format($money_arguments, 2));
     }
     else
     {
-        return (str_replace('-', "-$", $money_arguments));
+        return (str_replace('-', "-$", number_format($money_arguments, 2)));
     }
 }

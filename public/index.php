@@ -32,9 +32,9 @@ storeCSVFile($file_path); // all ada stored in $content array of array
 calculateMoney();
 
 // Format the money
-$total_income = formattingMoney(strval($total_income));
-$total_expense = formattingMoney(strval($total_expense));
-$net_total = formattingMoney(strval($net_total));
+$total_income = formattingMoney($total_income);
+$total_expense = formattingMoney($total_expense);
+$net_total = formattingMoney($net_total);
 
 // PROCESS THE TRANSACTION FILE
 require VIEWS_PATH . "transactions.php";
