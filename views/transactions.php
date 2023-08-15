@@ -22,14 +22,6 @@
                 text-align: right;
             }
             
-            .positive {
-                color: green;
-            }
-
-            .negative {
-                color: red;
-            }
-
         </style>
     </head>
     <body>
@@ -43,38 +35,20 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($content as $transaction): ?>
-                    <tr>
-                        <td><?= date('M d, Y', strtotime($transaction['Date'])) ?></td>
-                        <td><?= $transaction['Check #'] ?></td>
-                        <td><?= $transaction['Description'] ?></td>
-
-                        <!-- Dynamic add color based on the first char using ternary operator -->
-                        <td class=" <?= ($transaction['Amount'][0] !== '-') ? "positive": "negative" ?>">
-                            <?= $transaction['Amount'] ?>
-                        </td>
-
-                    </tr>
-                <?php endforeach; ?>
+                <!-- YOUR CODE -->
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3">Total Income:</th>
-                    <td>
-                        <?php echo $total_income; ?>
-                    </td>
+                    <!-- YOUR CODE -->
                 </tr>
                 <tr>
                     <th colspan="3">Total Expense:</th>
-                    <td>
-                        <?= $total_expense; ?>
-                    </td>
+                   <!-- YOUR CODE -->
                 </tr>
                 <tr>
                     <th colspan="3">Net Total:</th>
-                    <td>
-                        <?= $net_total; ?>
-                    </td>
+                    <!-- YOUR CODE -->
                 </tr>
             </tfoot>
         </table>
