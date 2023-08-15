@@ -9,3 +9,17 @@ define('FILES_PATH', $root . 'transaction_files' . DIRECTORY_SEPARATOR);
 define('VIEWS_PATH', $root . 'views' . DIRECTORY_SEPARATOR);
 
 /* YOUR CODE (Instructions in README.md) */
+
+require APP_PATH . 'App.php';
+
+// get all files from a directory 
+$allFiles = getFilesFromDirectory(FILES_PATH);
+
+// read all data 
+$transactions_files = [];
+
+foreach($allFiles as $file)
+{
+    $transactions_files = getDataFromFile($file);
+}
+
